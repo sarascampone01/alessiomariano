@@ -1,0 +1,1733 @@
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@300;400;600;700;800&display=swap');
+
+
+* {
+    box-sizing: border-box;
+}
+
+
+body {
+    margin: 0;
+    background: white;
+    color: black;
+    font-family: 'League Spartan', Arial, sans-serif;
+}
+
+
+
+/* ================= HOME HEADER ================= */
+
+
+header {
+
+    padding: 35px 55px;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: flex-start;
+
+}
+
+
+
+header h1 {
+
+    font-size: 48px;
+
+    letter-spacing: -2px;
+
+    margin: 0;
+
+    font-weight: 800;
+
+}
+
+
+
+header p {
+
+    margin-top: 14px;
+
+    font-size: 18px;
+
+}
+
+
+
+
+
+header img {
+
+    width: 32px;
+
+    height: 32px;
+
+}
+
+
+
+
+
+/* ================= HERO ================= */
+
+
+.hero {
+
+    padding: 25px 80px 110px;
+
+}
+
+
+
+.hero video {
+
+    width: 100%;
+
+    height: 560px;
+
+    object-fit: cover;
+
+    display: block;
+
+}
+
+
+
+
+
+/* ================= PROJECT GRID ================= */
+
+
+.projects {
+
+    padding: 0 80px 120px;
+
+}
+
+
+
+.projects h2 {
+
+    font-size: 24px;
+
+    font-weight: 700;
+
+    margin-bottom: 45px;
+
+}
+
+
+
+.grid {
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 70px 50px;
+
+}
+
+
+
+.project {
+
+    text-decoration: none;
+
+    color: black;
+
+}
+
+
+
+
+
+.cover {
+
+    height: 330px;
+
+    overflow: hidden;
+
+    position: relative;
+
+}
+
+
+
+.cover video {
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+
+    transition: transform 0.8s ease;
+
+}
+
+
+
+.project:hover .cover video {
+
+    transform: scale(1.04);
+
+    filter: brightness(0.65);
+
+}
+.project:hover .title {
+
+    background:black;
+
+    color:white;
+
+    padding-left:12px;
+
+}
+
+
+
+
+
+.cover::after {
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background:black;
+
+    opacity:0;
+
+    transition:opacity 0.4s ease;
+
+}
+
+
+
+.project:hover .cover::after {
+
+    opacity:0.15;
+
+}
+
+
+
+
+
+.title {
+
+    margin-top:14px;
+
+    font-size:16px;
+
+    font-weight:700;
+
+    padding:8px 0;
+
+    transition: all 0.3s ease;
+
+}
+
+
+
+
+
+/* ================================================= */
+/* ================= PROJECT PAGE ================= */
+/* ================================================= */
+
+
+
+.project-header {
+
+    padding:35px 55px;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+}
+
+
+
+.project-header h1 {
+
+    font-size:32px;
+
+    letter-spacing:-1px;
+
+    margin:0;
+
+}
+
+
+
+
+
+.home {
+    text-decoration: none;
+    color: black;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.home:visited {
+    color: black;
+}
+
+.home:hover {
+    opacity: 0.5;
+}
+
+
+
+
+
+.viewer {
+
+    width:100%;
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    margin:25px 0 0;
+
+}
+
+
+.viewer video {
+
+    width:75vw;
+
+    max-width:1200px;
+
+    height:auto;
+
+    max-height:70vh;
+
+    object-fit:contain;
+
+    display:block;
+
+}
+
+
+
+
+
+/* ================= NAVIGATION ================= */
+
+
+
+.navigation {
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:35px;
+
+    margin-top:5px;
+
+}
+
+
+
+.navigation button {
+
+    border:none;
+
+    background:none;
+
+    font-family:inherit;
+
+    font-size:22px;
+
+    cursor:pointer;
+
+    padding:0;
+
+}
+
+
+
+#counter {
+
+    font-size:16px;
+
+    font-weight:600;
+
+}
+.nav {
+
+    width:100%;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:35px;
+
+    margin-top:5px;
+
+}
+
+
+.nav button {
+
+    border:none;
+
+    background:none;
+
+    font-family:inherit;
+
+    font-size:22px;
+
+    cursor:pointer;
+
+    padding:0;
+
+}
+
+
+.nav span {
+
+    font-size:16px;
+
+    font-weight:600;
+
+}
+
+/* PAGE INTRO */
+
+.project-header,
+.viewer,
+.nav {
+    animation: fadeIn 0.6s ease forwards;
+}
+
+
+@keyframes fadeIn {
+
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+.nav button {
+    transition: opacity 0.3s ease;
+}
+
+
+.nav button:hover {
+    opacity: 0.4;
+}
+
+.navigation {
+    position: static;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 45px;
+    margin-top: 35px;
+}
+
+
+.navigation button {
+    position: static;
+    background: none;
+    border: none;
+    font-size: 22px;
+    line-height: 1;
+    cursor: pointer;
+    padding: 0;
+}
+
+
+#counter {
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.project-viewer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.home,
+.home-link {
+
+    text-decoration: none;
+
+    color: black;
+
+    font-size: 16px;
+
+    font-weight: 600;
+
+}
+
+
+.home:visited,
+.home-link:visited {
+
+    color: black;
+
+}
+
+
+.home:hover,
+.home-link:hover {
+
+    opacity: 0.5;
+
+}
+/* ================= ARCHIVE ================= */
+
+
+.archive {
+
+    padding: 0 80px 120px;
+
+}
+
+
+
+.archive h2 {
+
+    font-size:24px;
+
+    font-weight:700;
+
+    margin-bottom:45px;
+
+}
+
+
+
+.archive-grid {
+
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:50px;
+
+}
+
+
+
+.archive-item {
+
+    text-decoration:none;
+
+    color:black;
+
+}
+
+
+
+.archive-cover {
+
+    height:330px;
+
+    overflow:hidden;
+
+}
+
+
+.archive-cover img,
+.archive-cover video {
+
+    width:100%;
+
+    height:100%;
+
+    object-fit:cover;
+
+    display:block;
+
+    transition:transform 0.6s ease;
+
+}
+
+
+
+.archive-item:hover .archive-cover img,
+.archive-item:hover .archive-cover video {
+
+    transform:scale(1.04);
+
+}
+
+
+
+.archive-title {
+
+    margin-top:14px;
+
+    font-size:16px;
+
+    font-weight:700;
+
+}
+
+
+
+.archive-item:hover .archive-cover {
+
+    background:white;
+
+    color:black;
+
+    border:1px solid black;
+
+}
+/* ================= PHOTO ARCHIVE ================= */
+
+
+.photo-archive {
+
+    padding: 25px 80px 120px;
+
+}
+
+
+
+.photo-grid {
+
+    columns: 3;
+    column-gap: 30px;
+
+}
+
+
+.photo-grid img {
+
+    width:100%;
+    margin-bottom:30px;
+    display:block;
+    break-inside:avoid;
+
+}
+.photo-grid img {
+
+    width:100%;
+    margin-bottom:30px;
+    display:block;
+    break-inside:avoid;
+    transition: transform 0.4s ease;
+
+}
+
+
+.photo-grid img:hover {
+
+    transform:scale(1.02);
+
+}
+.archive-photo {
+    cursor:pointer;
+}
+
+
+/* LIGHTBOX */
+
+#lightbox {
+
+    display:none;
+
+    position:fixed;
+
+    inset:0;
+
+    background:white;
+
+    z-index:999;
+
+    justify-content:center;
+
+    align-items:center;
+
+}
+
+
+#lightbox img {
+
+    max-width:90vw;
+
+    max-height:90vh;
+
+    object-fit:contain;
+
+}
+
+
+#lightbox button {
+
+    position:absolute;
+
+    background:none;
+
+    border:none;
+
+    font-size:35px;
+
+    cursor:pointer;
+
+}
+
+
+#close {
+
+    top:30px;
+
+    right:40px;
+
+}
+
+
+#prevPhoto {
+
+    left:40px;
+
+}
+
+
+#nextPhoto {
+
+    right:40px;
+
+}
+/* ================= ARCHIVE UPDATE ================= */
+
+
+.archive {
+
+    padding: 0 80px 120px;
+
+}
+
+
+.archive-grid {
+
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:50px;
+
+}
+
+
+.archive-item {
+
+    text-decoration:none;
+
+    color:black;
+
+}
+
+
+
+.archive-image {
+
+    height:330px;
+
+    overflow:hidden;
+
+    position:relative;
+
+}
+
+
+
+.archive-image img,
+.archive-image video {
+
+    width:100%;
+
+    height:100%;
+
+    object-fit:cover;
+
+    display:block;
+
+    transition:transform 0.8s ease, filter 0.4s ease;
+
+}
+
+
+
+.archive-item:hover .archive-image img,
+.archive-item:hover .archive-image video {
+
+    transform:scale(1.04);
+
+    filter:brightness(0.65);
+
+}
+
+
+
+.archive-item:hover .title {
+
+    background:black;
+
+    color:white;
+
+    padding-left:12px;
+
+}
+
+
+.archive-item .title {
+
+    margin-top:14px;
+
+    font-size:16px;
+
+    font-weight:700;
+
+    padding:8px 0;
+
+    transition:all 0.3s ease;
+
+}
+/* ================= VIDEO ARCHIVE ================= */
+
+
+.video-grid {
+
+    padding:40px 80px 120px;
+
+    display:grid;
+
+    grid-template-columns:repeat(3, 1fr);
+
+    gap:50px;
+
+    align-items:start;
+
+}
+
+
+
+.archive-video {
+
+    width:100%;
+
+    cursor:pointer;
+
+    overflow:hidden;
+
+}
+
+
+
+.archive-video video {
+
+    width:100%;
+
+    aspect-ratio:16 / 9;
+
+    height:auto;
+
+    object-fit:cover;
+
+    display:block;
+
+    transition:transform 0.5s ease, filter 0.5s ease;
+
+}
+
+
+
+.archive-video:hover video {
+
+    transform:scale(1.04);
+
+    filter:brightness(0.7);
+
+}
+
+
+
+.video-title {
+
+    margin-top:14px;
+
+    font-size:16px;
+
+    font-weight:700;
+
+    padding:8px 12px;
+
+    background:black;
+
+    color:white;
+
+    opacity:0;
+
+    transition:opacity 0.25s ease;
+
+}
+
+
+
+.archive-video:hover .video-title {
+
+    opacity:1;
+
+}
+/* ================= VIDEO LIGHTBOX ================= */
+
+
+#videoLightbox {
+
+display:none;
+
+position:fixed;
+
+inset:0;
+
+background:white;
+
+z-index:999;
+
+align-items:center;
+
+justify-content:center;
+
+}
+
+
+
+#lightboxVideo {
+
+max-width:90vw;
+
+max-height:85vh;
+
+object-fit:contain;
+
+}
+
+
+
+#videoLightbox button {
+
+position:absolute;
+
+background:none;
+
+border:none;
+
+font-size:35px;
+
+cursor:pointer;
+
+}
+
+
+
+#closeVideo {
+
+top:30px;
+
+right:40px;
+
+}
+
+
+
+#prevVideo {
+
+left:40px;
+
+}
+
+
+
+#nextVideo {
+
+right:40px;
+
+}
+/* ================= CONTACT ================= */
+
+
+.contact {
+
+    padding:0 80px 80px;
+
+}
+
+
+
+.contact h2 {
+
+    font-size:16px;
+
+    font-weight:700;
+
+    margin-bottom:35px;
+
+}
+
+
+
+.contact-info {
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:8px;
+
+}
+
+
+
+.contact-info h3 {
+
+    font-size:18px;
+
+    margin:0 0 8px;
+
+    font-weight:600;
+
+}
+
+
+
+.contact-info a {
+
+    color:black;
+
+    text-decoration:none;
+
+    font-size:14px;
+
+    font-weight:400;
+
+}
+
+
+
+.contact-info a:hover {
+
+    opacity:0.5;
+
+}
+
+/* ================= VIDEO ARCHIVE TITLES ================= */
+
+.archive-video {
+    cursor: pointer;
+}
+
+
+.video-title {
+
+    margin-top: 14px;
+
+    font-size: 16px;
+
+    font-weight: 700;
+
+    padding: 8px 12px;
+
+    background: black;
+
+    color: white;
+
+    opacity: 0;
+
+    transition: opacity 0.25s ease;
+
+}
+
+
+.archive-video:hover .video-title {
+
+    opacity: 1;
+
+}
+
+/* ================================================= */
+/* ================= MOBILE ======================== */
+/* ================================================= */
+
+@media (max-width: 768px) {
+
+
+    /* ================= HEADER ================= */
+
+    header {
+        padding: 25px 20px;
+    }
+
+    header h1 {
+        font-size: 32px;
+        letter-spacing: -1.5px;
+    }
+
+    header p {
+        font-size: 15px;
+        margin-top: 8px;
+    }
+
+    header img {
+        width: 26px;
+        height: 26px;
+    }
+
+
+    /* ================= HERO ================= */
+
+    .hero {
+        padding: 15px 20px 70px;
+    }
+
+    .hero video {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 16 / 9;
+        object-fit: cover;
+    }
+
+
+    /* ================= PROJECTS ================= */
+
+    .projects {
+        padding: 0 20px 80px;
+    }
+
+    .projects h2 {
+        font-size: 20px;
+        margin-bottom: 30px;
+    }
+
+    .grid {
+        grid-template-columns: 1fr;
+        gap: 45px;
+    }
+
+    .cover {
+        height: auto;
+        aspect-ratio: 16 / 9;
+    }
+
+    .cover video {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .title {
+        font-size: 15px;
+        margin-top: 10px;
+    }
+
+
+    /* ================= PROJECT PAGE ================= */
+
+    .project-header {
+        padding: 25px 20px;
+    }
+
+    .project-header h1 {
+        font-size: 24px;
+        letter-spacing: -0.5px;
+    }
+    .project-header h1 {
+    font-size: 24px;
+    letter-spacing: -0.5px;
+    line-height: 1;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+    .home,
+    .home-link {
+        font-size: 14px;
+    }
+
+    .viewer {
+        width: 100%;
+        padding: 0 20px;
+        margin: 20px 0 0;
+    }
+
+    .viewer video {
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+        max-height: none;
+    }
+
+    .navigation {
+        gap: 30px;
+        margin-top: 25px;
+    }
+
+    .navigation button {
+        font-size: 20px;
+    }
+
+    #counter {
+        font-size: 14px;
+    }
+
+
+    /* ================= ARCHIVE ================= */
+
+    .archive {
+        padding: 0 20px 80px;
+    }
+
+    .archive-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .archive-cover {
+        height: auto;
+        aspect-ratio: 16 / 9;
+    }
+
+    .archive-image {
+        height: auto;
+        aspect-ratio: 16 / 9;
+    }
+
+
+    /* ================= PHOTO ARCHIVE ================= */
+
+    .photo-archive {
+        padding: 20px 20px 80px;
+    }
+
+    .photo-grid {
+        columns: 1;
+        column-gap: 0;
+    }
+
+    .photo-grid img {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+
+    /* ================= PHOTO LIGHTBOX ================= */
+
+    #lightbox img {
+        max-width: 92vw;
+        max-height: 82vh;
+    }
+
+    #lightbox button {
+        font-size: 28px;
+    }
+
+    #close {
+        top: 20px;
+        right: 20px;
+    }
+
+    #prevPhoto {
+        left: 15px;
+    }
+
+    #nextPhoto {
+        right: 15px;
+    }
+
+
+    /* ================= VIDEO ARCHIVE ================= */
+
+    .video-grid {
+        padding: 25px 20px 80px;
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .archive-video video {
+        width: 100%;
+        aspect-ratio: 16 / 9;
+        height: auto;
+        object-fit: cover;
+    }
+
+    .video-title {
+        font-size: 14px;
+        margin-top: 10px;
+        padding: 7px 10px;
+    }
+
+
+    /* ================= VIDEO LIGHTBOX ================= */
+
+    #videoLightbox {
+        padding: 20px;
+    }
+
+    #lightboxVideo {
+        max-width: 94vw;
+        max-height: 75vh;
+        width: 100%;
+        height: auto;
+        object-fit: contain;
+    }
+
+    #videoLightbox button {
+        font-size: 28px;
+    }
+
+    #closeVideo {
+        top: 20px;
+        right: 20px;
+    }
+
+    #prevVideo {
+        left: 10px;
+    }
+
+    #nextVideo {
+        right: 10px;
+    }
+
+
+    /* ================= CONTACT ================= */
+
+    .contact {
+        padding: 0 20px 60px;
+    }
+
+    .contact h2 {
+        font-size: 15px;
+        margin-bottom: 25px;
+    }
+
+    .contact-info h3 {
+        font-size: 17px;
+    }
+
+    .contact-info a {
+        font-size: 13px;
+    }
+
+}
+/* =========================================
+   MOBILE / ARCHIVE IMPROVEMENTS
+   ========================================= */
+
+
+/* VIDEO HOMEPAGE — nessuna interazione sul video */
+
+.project video {
+    pointer-events: none;
+}
+
+
+/* ARCHIVE HEADER — rimane visibile durante lo scroll */
+
+.project-header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: white;
+}
+
+
+/* FRECCE ARCHIVE — sempre nere */
+
+#prevPhoto,
+#nextPhoto,
+#prevVideo,
+#nextVideo {
+    color: #000;
+    background: transparent;
+    border: none;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 768px) {
+
+    .project-header {
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        background: white;
+        padding: 25px 40px;
+    }
+
+    #prevPhoto,
+    #nextPhoto,
+    #prevVideo,
+    #nextVideo {
+        color: #000;
+        background: transparent;
+        border: none;
+    }
+
+}
+/* =========================================
+   VIDEO PREVIEW — NO CONTROLS
+   ========================================= */
+
+/* Hero homepage */
+.hero video {
+    pointer-events: none;
+}
+
+/* Video dei Projects */
+.project video {
+    pointer-events: none;
+}
+
+/* Preview Video Archive */
+.archive-video video {
+    pointer-events: none;
+}
+@media (max-width: 768px) {
+
+    header > a {
+        display: block;
+        width: 28px;
+        height: 28px;
+        flex-shrink: 0;
+    }
+
+    header > a img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+    }
+
+}
+@media (max-width: 768px) {
+
+    .navigation button {
+        color: #000 !important;
+        background: transparent !important;
+        border: none !important;
+        outline: none !important;
+    }
+
+}
+@media (max-width: 768px) {
+
+    .navigation,
+    .navigation button,
+    .navigation button:visited,
+    .navigation button:hover,
+    .navigation button:active,
+    .navigation button:focus {
+        color: #000 !important;
+    }
+
+    .navigation button {
+        -webkit-appearance: none;
+        appearance: none;
+        background: transparent !important;
+        border: none !important;
+        outline: none !important;
+        box-shadow: none !important;
+    }
+
+}
+@media (max-width: 768px) {
+
+    .project-header h1.long-title {
+        font-size: 20px;
+        letter-spacing: -0.5px;
+        white-space: nowrap;
+    }
+
+}
+/* =========================================
+   PROJECT PAGES — NAVIGATION UNIFORM
+   ========================================= */
+
+.project-page .navigation {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 45px !important;
+    margin-top: 35px !important;
+    width: 100% !important;
+}
+
+
+/* FRECCE */
+
+.project-page .navigation button {
+    color: #000 !important;
+    background: transparent !important;
+    border: none !important;
+    outline: none !important;
+    box-shadow: none !important;
+
+    font-family: inherit !important;
+    font-size: 38px !important;
+    font-weight: 400 !important;
+    line-height: 1 !important;
+
+    padding: 0 !important;
+    margin: 0 !important;
+
+    width: 45px !important;
+    height: 45px !important;
+
+    cursor: pointer !important;
+
+    -webkit-appearance: none !important;
+    appearance: none !important;
+}
+
+
+/* NUMERO 01 / 09 */
+
+.project-page .navigation #counter {
+    color: #000 !important;
+
+    font-family: inherit !important;
+    font-size: 24px !important;
+    font-weight: 400 !important;
+    line-height: 1 !important;
+
+    padding: 0 !important;
+    margin: 0 !important;
+
+    white-space: nowrap !important;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 768px) {
+
+    .project-page .navigation {
+        gap: 40px !important;
+        margin-top: 30px !important;
+    }
+
+    .project-page .navigation button {
+        color: #000 !important;
+
+        font-size: 32px !important;
+        line-height: 1 !important;
+
+        width: 40px !important;
+        height: 40px !important;
+
+        padding: 0 !important;
+        margin: 0 !important;
+    }
+
+    .project-page .navigation #counter {
+        color: #000 !important;
+
+        font-size: 22px !important;
+        line-height: 1 !important;
+    }
+
+}
+/* =========================================
+   PROJECT PAGES — NAVIGATION UNIFORM
+   ========================================= */
+
+.project-page .nav,
+.project-page .navigation {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 45px !important;
+    margin-top: 35px !important;
+    width: 100% !important;
+}
+
+
+/* FRECCE */
+
+.project-page .nav button,
+.project-page .navigation button {
+    color: #000 !important;
+    background: transparent !important;
+    border: none !important;
+    outline: none !important;
+    box-shadow: none !important;
+
+    font-family: inherit !important;
+    font-size: 38px !important;
+    font-weight: 400 !important;
+    line-height: 1 !important;
+
+    padding: 0 !important;
+    margin: 0 !important;
+
+    width: 45px !important;
+    height: 45px !important;
+
+    cursor: pointer !important;
+
+    -webkit-appearance: none !important;
+    appearance: none !important;
+}
+
+
+/* NUMERO */
+
+.project-page .nav span,
+.project-page .navigation #counter {
+    color: #000 !important;
+
+    font-family: inherit !important;
+    font-size: 24px !important;
+    font-weight: 400 !important;
+    line-height: 1 !important;
+
+    padding: 0 !important;
+    margin: 0 !important;
+
+    white-space: nowrap !important;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 768px) {
+
+    .project-page .nav,
+    .project-page .navigation {
+        gap: 40px !important;
+        margin-top: 30px !important;
+    }
+
+    .project-page .nav button,
+    .project-page .navigation button {
+        font-size: 32px !important;
+        line-height: 1 !important;
+
+        width: 40px !important;
+        height: 40px !important;
+
+        padding: 0 !important;
+        margin: 0 !important;
+    }
+
+    .project-page .nav span,
+    .project-page .navigation #counter {
+        font-size: 22px !important;
+        line-height: 1 !important;
+    }
+
+}
+/* =========================================
+   UNIFORMITA' NAVIGAZIONE PROJECTS
+   ========================================= */
+
+.nav,
+.navigation {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    gap: 45px !important;
+    margin-top: 35px !important;
+    width: 100% !important;
+}
+
+
+/* FRECCE */
+
+.nav button,
+.navigation button {
+    font-family: inherit !important;
+    font-size: 38px !important;
+    font-weight: 400 !important;
+    line-height: 1 !important;
+
+    color: #000 !important;
+    background: transparent !important;
+    border: none !important;
+    outline: none !important;
+    box-shadow: none !important;
+
+    width: 45px !important;
+    height: 45px !important;
+
+    padding: 0 !important;
+    margin: 0 !important;
+
+    cursor: pointer !important;
+}
+
+
+/* CONTATORE */
+
+.nav span,
+.navigation #counter {
+    font-family: inherit !important;
+    font-size: 24px !important;
+    font-weight: 400 !important;
+    line-height: 1 !important;
+
+    color: #000 !important;
+
+    padding: 0 !important;
+    margin: 0 !important;
+
+    white-space: nowrap !important;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 768px) {
+
+    .nav,
+    .navigation {
+        gap: 40px !important;
+        margin-top: 30px !important;
+    }
+
+    .nav button,
+    .navigation button {
+        font-size: 32px !important;
+        width: 40px !important;
+        height: 40px !important;
+    }
+
+    .nav span,
+    .navigation #counter {
+        font-size: 22px !important;
+    }
+
+}
