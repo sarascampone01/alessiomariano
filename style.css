@@ -1254,11 +1254,11 @@ right:40px;
 
     /* ================= PHOTO LIGHTBOX ================= */
 
-   #lightbox img {
+  #lightbox img {
     width: auto;
     height: auto;
-    max-width: 92vw;
-    max-height: 82vh;
+    max-width: 90vw;
+    max-height: 85vh;
     object-fit: contain;
     display: block;
 }
@@ -1764,4 +1764,41 @@ right:40px;
 
 #archiveBack:hover {
     opacity: 0.6;
+}
+/* =========================
+   LIGHTBOX - FOTO INTERA
+   ========================= */
+
+#lightbox {
+    position: fixed !important;
+    inset: 0 !important;
+
+    width: 100vw !important;
+    height: 100vh !important;
+
+    display: none;
+    align-items: center !important;
+    justify-content: center !important;
+
+    padding: 50px !important;
+    box-sizing: border-box !important;
+
+    overflow: auto !important;
+    z-index: 9999 !important;
+}
+
+#lightbox img#lightboxImage {
+    width: auto !important;
+    height: auto !important;
+
+    max-width: calc(100vw - 100px) !important;
+    max-height: calc(100vh - 100px) !important;
+
+    min-width: 0 !important;
+    min-height: 0 !important;
+
+    object-fit: contain !important;
+    object-position: center !important;
+
+    display: block !important;
 }
