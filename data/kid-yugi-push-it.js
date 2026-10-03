@@ -6,17 +6,17 @@ const projectData = {
 
     videos: [
 
-        "post3.mp4",
+        "https://res.cloudinary.com/o40vc5qd/video/upload/q_auto/f_auto/br_1800k/w_720/post3.mp4",
 
-        "https://res.cloudinary.com/o40vc5qd/video/upload/v1790973506/post4-web.mp4",
+        "https://res.cloudinary.com/o40vc5qd/video/upload/q_auto/f_auto/br_1800k/w_720/post4-web.mp4",
 
-        "post5.mp4",
+        "https://res.cloudinary.com/o40vc5qd/video/upload/q_auto/f_auto/br_1800k/w_720/post5.mp4",
 
-        "post6.mp4",
+        "https://res.cloudinary.com/o40vc5qd/video/upload/q_auto/f_auto/br_1800k/w_720/post6.mp4",
 
-        "https://res.cloudinary.com/o40vc5qd/video/upload/v1790983785/post7-web.mp4",
+        "https://res.cloudinary.com/o40vc5qd/video/upload/q_auto/f_auto/br_1800k/w_720/post7-web.mp4",
 
-        "post8.mp4"
+        "https://res.cloudinary.com/o40vc5qd/video/upload/q_auto/f_auto/br_1800k/w_720/post8.mp4"
 
     ]
 
