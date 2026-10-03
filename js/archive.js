@@ -19,7 +19,6 @@ photos.forEach((photo, index) => {
     photo.addEventListener("click", function () {
 
         current = index;
-
         openPhoto();
 
     });
@@ -30,8 +29,21 @@ photos.forEach((photo, index) => {
 function openPhoto() {
 
     lightbox.style.display = "flex";
+    lightbox.classList.add("is-open");
 
     lightboxImage.src = photos[current].src;
+
+}
+
+
+/* =========================
+   CHIUDI LIGHTBOX
+   ========================= */
+
+function closeLightbox() {
+
+    lightbox.style.display = "none";
+    lightbox.classList.remove("is-open");
 
 }
 
@@ -40,7 +52,9 @@ function openPhoto() {
    FOTO SUCCESSIVA
    ========================= */
 
-next.addEventListener("click", function () {
+next.addEventListener("click", function (e) {
+
+    e.preventDefault();
 
     current++;
 
@@ -57,7 +71,9 @@ next.addEventListener("click", function () {
    FOTO PRECEDENTE
    ========================= */
 
-prev.addEventListener("click", function () {
+prev.addEventListener("click", function (e) {
+
+    e.preventDefault();
 
     current--;
 
@@ -71,14 +87,49 @@ prev.addEventListener("click", function () {
 
 
 /* =========================
-   CHIUDI
+   CHIUDI CON X
    ========================= */
 
-close.addEventListener("click", function () {
+close.addEventListener("click", function (e) {
 
-    lightbox.style.display = "none";
+    e.preventDefault();
+
+    closeLightbox();
 
 });
+
+
+/* =========================
+   HOME
+   =========================
+   
+   Se il lightbox è aperto:
+   HOME chiude il lightbox e
+   resta nella Photo Archive.
+
+   Se il lightbox è chiuso:
+   HOME funziona normalmente
+   e porta al portfolio.
+*/
+
+document.addEventListener("click", function (e) {
+
+    const home = e.target.closest(".home");
+
+    if (!home) {
+        return;
+    }
+
+    if (lightbox.classList.contains("is-open")) {
+
+        e.preventDefault();
+        e.stopPropagation();
+
+        closeLightbox();
+
+    }
+
+}, true);
 
 
 /* =========================
@@ -87,20 +138,29 @@ close.addEventListener("click", function () {
 
 document.addEventListener("keydown", function (e) {
 
-    if (lightbox.style.display !== "flex") {
+    if (!lightbox.classList.contains("is-open")) {
         return;
     }
 
     if (e.key === "ArrowRight") {
+
+        e.preventDefault();
         next.click();
+
     }
 
     if (e.key === "ArrowLeft") {
+
+        e.preventDefault();
         prev.click();
+
     }
 
     if (e.key === "Escape") {
-        close.click();
+
+        e.preventDefault();
+        closeLightbox();
+
     }
 
 });
