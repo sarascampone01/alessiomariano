@@ -1,21 +1,29 @@
 const videos = [
 
-    "../assets/archive/video/video1.mp4",
-    "../assets/archive/video/video2.mp4",
-    "../assets/archive/video/video3.mp4",
-    "../assets/archive/video/video4.mp4",
-    "../assets/archive/video/video5.mp4"
+    "https://res.cloudinary.com/o40vc5qd/video/upload/q_auto/br_1800k/w_720/video1.mp4",
+
+    "https://res.cloudinary.com/o40vc5qd/video/upload/q_auto/br_1800k/w_720/video2.mov",
+
+    "https://res.cloudinary.com/o40vc5qd/video/upload/q_auto/br_1800k/w_720/video3.mov",
+
+    "https://res.cloudinary.com/o40vc5qd/video/upload/q_auto/br_1800k/w_720/video4.mov",
+
+    "https://res.cloudinary.com/o40vc5qd/video/upload/q_auto/br_1800k/w_720/video5.mp4"
 
 ];
 
 
 const lightboxVideos = [
 
-    "https://res.cloudinary.com/o40vc5qd/video/upload/v1790970688/video1.mp4",
-    "https://res.cloudinary.com/o40vc5qd/video/upload/v1790972545/video2-web.mp4",
-    "https://res.cloudinary.com/o40vc5qd/video/upload/v1790972547/video3-web.mp4",
-    "https://res.cloudinary.com/o40vc5qd/video/upload/v1790972547/video4-web.mp4",
-    "https://res.cloudinary.com/o40vc5qd/video/upload/v1790972552/video5-web.mp4"
+    "https://res.cloudinary.com/o40vc5qd/video/upload/q_auto/br_3000k/w_1080/video1.mp4",
+
+    "https://res.cloudinary.com/o40vc5qd/video/upload/q_auto/br_3000k/w_1080/video2.mov",
+
+    "https://res.cloudinary.com/o40vc5qd/video/upload/q_auto/br_3000k/w_1080/video3.mov",
+
+    "https://res.cloudinary.com/o40vc5qd/video/upload/q_auto/br_3000k/w_1080/video4.mov",
+
+    "https://res.cloudinary.com/o40vc5qd/video/upload/q_auto/br_3000k/w_1080/video5.mp4"
 
 ];
 
@@ -26,14 +34,25 @@ const lightbox = document.getElementById("videoLightbox");
 
 const video = document.getElementById("lightboxVideo");
 
+const nextButton = document.getElementById("nextVideo");
+
+const prevButton = document.getElementById("prevVideo");
+
+const closeButton = document.getElementById("closeVideo");
+
+const archiveBack = document.getElementById("archiveBack");
+
 
 let current = 0;
 
 
+/* =========================
+   APERTURA VIDEO
+   ========================= */
 
-thumbs.forEach((item,index)=>{
+thumbs.forEach((item, index) => {
 
-    item.addEventListener("click",()=>{
+    item.addEventListener("click", () => {
 
         current = index;
 
@@ -44,8 +63,11 @@ thumbs.forEach((item,index)=>{
 });
 
 
+/* =========================
+   APERTURA LIGHTBOX
+   ========================= */
 
-function openVideo(){
+function openVideo() {
 
     lightbox.style.display = "flex";
 
@@ -53,30 +75,11 @@ function openVideo(){
 
     video.currentTime = 0;
 
-
-    /* usa il video Cloudinary solo nel Lightbox */
-
     video.src = lightboxVideos[current];
-
-
-    video.removeAttribute("muted");
-
-    video.muted = false;
-
-    video.volume = 1;
 
     video.load();
 
-
-    video.play()
-    .then(() => {
-
-        video.muted = false;
-
-        video.volume = 1;
-
-    })
-    .catch(error => {
+    video.play().catch(error => {
 
         console.log("Errore riproduzione:", error);
 
@@ -85,12 +88,15 @@ function openVideo(){
 }
 
 
+/* =========================
+   VIDEO SUCCESSIVO
+   ========================= */
 
-document.getElementById("nextVideo").onclick = () => {
+nextButton.addEventListener("click", () => {
 
     current++;
 
-    if(current >= videos.length){
+    if (current >= lightboxVideos.length) {
 
         current = 0;
 
@@ -98,27 +104,33 @@ document.getElementById("nextVideo").onclick = () => {
 
     openVideo();
 
-};
+});
 
 
+/* =========================
+   VIDEO PRECEDENTE
+   ========================= */
 
-document.getElementById("prevVideo").onclick = () => {
+prevButton.addEventListener("click", () => {
 
     current--;
 
-    if(current < 0){
+    if (current < 0) {
 
-        current = videos.length - 1;
+        current = lightboxVideos.length - 1;
 
     }
 
     openVideo();
 
-};
+});
 
 
+/* =========================
+   TORNA AL VIDEO ARCHIVE
+   ========================= */
 
-document.getElementById("closeVideo").onclick = () => {
+function closeLightbox() {
 
     lightbox.style.display = "none";
 
@@ -128,33 +140,54 @@ document.getElementById("closeVideo").onclick = () => {
 
     video.load();
 
-};
+}
 
 
+archiveBack.addEventListener("click", () => {
 
-document.addEventListener("keydown",(e)=>{
+    closeLightbox();
 
-    if(lightbox.style.display === "flex"){
-
-        if(e.key === "ArrowRight"){
-
-            document.getElementById("nextVideo").click();
-
-        }
+});
 
 
-        if(e.key === "ArrowLeft"){
+/* =========================
+   CHIUDI
+   ========================= */
 
-            document.getElementById("prevVideo").click();
+closeButton.addEventListener("click", () => {
 
-        }
+    closeLightbox();
+
+});
 
 
-        if(e.key === "Escape"){
+/* =========================
+   TASTIERA
+   ========================= */
 
-            document.getElementById("closeVideo").click();
+document.addEventListener("keydown", (e) => {
 
-        }
+    if (lightbox.style.display !== "flex") {
+
+        return;
+
+    }
+
+    if (e.key === "ArrowRight") {
+
+        nextButton.click();
+
+    }
+
+    if (e.key === "ArrowLeft") {
+
+        prevButton.click();
+
+    }
+
+    if (e.key === "Escape") {
+
+        closeLightbox();
 
     }
 
