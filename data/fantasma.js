@@ -6,15 +6,23 @@ const projectData = {
 
     videos: [
 
-        "fantasma01.mp4",
-        "fantasma02.mp4",
-        "fantasma03.mp4",
-        "fantasma04.mp4",
-        "fantasma05.mp4",
-        "fantasma06.mp4",
-        "fantasma07.mp4",
-        "fantasma08.mp4",
-        "fantasma09.mp4"
+        "https://res.cloudinary.com/o40vc5qd/video/upload/q_auto/f_auto/br_1800k/w_720/fantasma01.mov",
+
+        "https://res.cloudinary.com/o40vc5qd/video/upload/q_auto/f_auto/br_1800k/w_720/fantasma02.mov",
+
+        "https://res.cloudinary.com/o40vc5qd/video/upload/q_auto/f_auto/br_1800k/w_720/fantasma03.mov",
+
+        "https://res.cloudinary.com/o40vc5qd/video/upload/q_auto/f_auto/br_1800k/w_720/fantasma04.mov",
+
+        "https://res.cloudinary.com/o40vc5qd/video/upload/q_auto/f_auto/br_1800k/w_720/fantasma05.mov",
+
+        "https://res.cloudinary.com/o40vc5qd/video/upload/q_auto/f_auto/br_1800k/w_720/fantasma06.mov",
+
+        "https://res.cloudinary.com/o40vc5qd/video/upload/q_auto/f_auto/br_1800k/w_720/fantasma07.mov",
+
+        "https://res.cloudinary.com/o40vc5qd/video/upload/q_auto/f_auto/br_1800k/w_720/fantasma08.mov",
+
+        "https://res.cloudinary.com/o40vc5qd/video/upload/q_auto/f_auto/br_1800k/w_720/fantasma09.mov"
 
     ]
 
