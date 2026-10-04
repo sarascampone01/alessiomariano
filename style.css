@@ -2534,3 +2534,21 @@ right:40px;
     }
 
 }
+/* =========================================
+   ARCHIVE HEADER — MOBILE
+   ========================================= */
+
+@media (max-width: 768px) {
+
+    .archive-page .project-header {
+        position: sticky !important;
+        top: 0 !important;
+        z-index: 1000 !important;
+
+        background: #fff !important;
+
+        width: 100% !important;
+        box-sizing: border-box !important;
+    }
+
+}
