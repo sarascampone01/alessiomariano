@@ -15,20 +15,44 @@ const videos = [
 
 const lightboxVideos = [
 
-    "https://res.cloudinary.com/o40vc5qd/video/upload/q_auto/br_3000k/w_1080/video1.mp4",
+    "https://res.cloudinary.com/o40vc5qd/video/upload/q_auto:good/f_mp4/br_5000k/w_1440/video1.mp4",
 
-    "https://res.cloudinary.com/o40vc5qd/video/upload/q_auto/br_3000k/w_1080/video2.mov",
+    "https://res.cloudinary.com/o40vc5qd/video/upload/q_auto:good/f_mp4/br_5000k/w_1440/video2.mp4",
 
-    "https://res.cloudinary.com/o40vc5qd/video/upload/q_auto/br_3000k/w_1080/video3.mov",
+    "https://res.cloudinary.com/o40vc5qd/video/upload/q_auto:good/f_mp4/br_5000k/w_1440/video3.mp4",
 
-    "https://res.cloudinary.com/o40vc5qd/video/upload/q_auto/br_3000k/w_1080/video4.mov",
+    "https://res.cloudinary.com/o40vc5qd/video/upload/q_auto:good/f_mp4/br_5000k/w_1440/video4.mp4",
 
-    "https://res.cloudinary.com/o40vc5qd/video/upload/q_auto/br_3000k/w_1080/video5.mp4"
+    "https://res.cloudinary.com/o40vc5qd/video/upload/q_auto:good/f_mp4/br_5000k/w_1440/video5.mp4"
 
 ];
 
 
 const thumbs = document.querySelectorAll(".archive-video");
+/* =========================
+   AUTOPLAY PREVIEW
+   ========================= */
+
+const previewVideos = document.querySelectorAll(".archive-video video");
+
+previewVideos.forEach((preview) => {
+
+    preview.muted = true;
+    preview.autoplay = true;
+    preview.loop = true;
+    preview.playsInline = true;
+
+    preview.play().catch(() => {
+
+        preview.addEventListener("loadeddata", () => {
+
+            preview.play().catch(() => {});
+
+        }, { once: true });
+
+    });
+
+});
 
 const lightbox = document.getElementById("videoLightbox");
 
