@@ -42,10 +42,14 @@ function updateVideo() {
         }
 
         // prepara il video
-        video.preload = "auto";
+video.preload = "auto";
+video.autoplay = true;
+video.muted = true;
+video.loop = true;
+video.playsInline = true;
 
-        // carica il nuovo video
-        video.load();
+// carica il nuovo video
+video.load();
 
         // avvia la riproduzione
         video.play().catch(() => {

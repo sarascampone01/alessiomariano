@@ -1,18 +1,18 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
 
-    <meta charset="UTF-8">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<title>BEKKERIA - GHETTOMOOD</title>
 
-  <link rel="stylesheet" href="../style.css?v=3">
+<link rel="stylesheet" href="../style.css?v=3">
 
 </head>
 
-
-<body>
-
+<body class="project-page project-viewer-page">
 
 <header class="project-header">
 
@@ -26,40 +26,35 @@
 
 </header>
 
+<main class="viewer">
 
+    <video
+        id="projectVideo"
+        autoplay
+        muted
+        loop
+        playsinline>
+    </video>
 
+    <div class="navigation">
 
-<section class="viewer">
+        <button id="prev">
+            ←
+        </button>
 
+        <span id="counter">
+            01 / 13
+        </span>
 
-  <video id="projectVideo" autoplay muted loop playsinline>
+        <button id="next">
+            →
+        </button>
 
-</video>
+    </div>
 
-
-</section>
-
-
-
-
-<div class="nav">
-
-    <button id="prev">
-        ←
-    </button>
-
-    <span id="counter">
-        01 / 13
-    </span>
-
-    <button id="next">
-        →
-    </button>
-
-</div>
+</main>
 
 <script src="../data/ghettomood.js"></script>
-
 <script src="../js/script.js"></script>
 
 </body>

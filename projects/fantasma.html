@@ -1,19 +1,18 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
 
-    <meta charset="UTF-8">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>MYTO - FANTASMA</title>
+<title>MYTO - FANTASMA</title>
 
-   <link rel="stylesheet" href="../style.css?v=3">
+<link rel="stylesheet" href="../style.css?v=3">
 
 </head>
 
-
-<body>
-
+<body class="project-page project-viewer-page">
 
 <header class="project-header">
 
@@ -27,38 +26,33 @@
 
 </header>
 
+<main class="viewer">
 
-
-
-<section class="viewer">
-
-
-  <video id="projectVideo" autoplay muted loop playsinline>
-
-       <source src="../assets/fantasma01.mp4" type="video/mp4">
+    <video
+        id="projectVideo"
+        autoplay
+        muted
+        loop
+        playsinline>
     </video>
 
+    <div class="navigation">
 
-</section>
+        <button id="prev">
+            ←
+        </button>
 
+        <span id="counter">
+            01 / 09
+        </span>
 
+        <button id="next">
+            →
+        </button>
 
+    </div>
 
-<div class="nav">
-
-    <button id="prev">
-        ←
-    </button>
-
-    <span id="counter">
-        01 / 09
-    </span>
-
-    <button id="next">
-        →
-    </button>
-
-</div>
+</main>
 
 <script src="../data/fantasma.js"></script>
 <script src="../js/script.js"></script>
